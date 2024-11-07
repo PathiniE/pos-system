@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <br>
+    <br>
+<div class="container">
+    Login here
+    <hr>
+    <div class="row">
+        <div class="col-12 col-md-4 inner">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" type="email" id="username" placeholder="Ex: abc@gmail.com">
+            </div>
+        </div>
+        <div class="col-12 col-md-4 inner">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" id="password">
+            </div>
+        </div>
+        <div class="col-12">
+            <br>
+            <button class="btn btn-primary btn-sm">Login</button>&nbsp;
+            <button class="btn btn-success btn-sm " data-bs-toggle="modal" data-bs-target="#exampleModal" id="signupButton">Sign Up</button>
+
+        </div>
+        
+        <div class="col-12">
+            <hr>
+            <button class="btn btn-danger btn-sm">Signin with Google</button>
+            <button class="btn btn-dark btn-sm" >Signin with GitHub</button>
+        </div>
+    </div>
+    <hr>
+    <div class="tab-context">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" id="customerTab" aria-current="page" href="#">Customers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="productTab" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="orderTab" href="#">Orders</a>
+            </li>
+        </ul>
+    </div>
+    <div id="customerContext" class="customer-context">
+        <br>
+        <h3>Customer Management</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="button-wrap">
+                    <button class="btn-success btn">+ New Customer</button>
+                </div>
+            </div>
+            <div class="col-12">
+                <br>
+                <input type="search" class="form-control" placeholder="Search By Name">
+            </div>
+            <div class="col-12">
+                <br>
+                <table class="table table-hover"> 
+                    <thead>
+                        <tr>
+                            <td>#Index</td>
+                            <td>Name</td>
+                            <td>Email</td>
+                            <td>Salary</td>
+                            <td>Tools</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Kamal</td>
+                            <td>abc@gmail.com</td>
+                            <td>25000 (pipe)</td>
+                            <td>
+                                <span class="delete-option option">Delete</span> |
+                                <span  class="update-option option">Update</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Kamal</td>
+                            <td>abc@gmail.com</td>
+                            <td>25000 (pipe)</td>
+                            <td>
+                                <span  class="delete-option option">Delete</span> |
+                                <span  class="update-option option">Update</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="productContext" class="product-context">
+        <br>
+        <h3> Product Management</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="button-wrap">
+                    <button class="btn-success btn">+ New Product</button>
+                </div>
+            </div>
+            <div class="col-12">
+                <br>
+                <input type="search" class="form-control" placeholder="Search By Name">
+            </div>
+            <div class="col-12">
+                <br>
+                <table class="table table-hover"> 
+                    <thead>
+                        <tr>
+                            <td>#Index</td>
+                            <td>Name</td>
+                            <td>Describtion</td>
+                            <td>Unit Price</td>
+                            <td>Qty on hand</td>
+                            <td>Image</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="ordersContext" class="order-context">
+        <br>
+        <h3> Order Management</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="button-wrap">
+                    <button class="btn-success btn">+ Place Order</button>
+                </div>
+            </div>
+            <div class="col-12">
+                <br>
+                <table class="table table-hover"> 
+                    <thead>
+                        <tr>
+                            <td>#Index</td>
+                            <td>Date</td>
+                            <td>Amount</td>
+                            <td>Discount</td>
+                            <td>Customer</td>
+                            <td>Tools</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+
+    <script type="module">
+       
+       import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js'
+       import { getAnalytics } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js'
+       import { getAuth , SignInWithPopup , GoogleAuthProvider, signOut } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js'
+       import { getFirestore , doc, setDoc } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js'
+       import { getStorage,ref,uploadByted,getDownloadUR} from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js'
+
+
+
+        const firebaseConfig = {
+        apiKey: "AIzaSyBc8CaZDC99iw08z5iTQd5reBDXcP5Fim8",
+        authDomain: "pos-system-1a283.firebaseapp.com",
+        projectId: "pos-system-1a283",
+        storageBucket: "pos-system-1a283.appspot.com",
+        messagingSenderId: "689968025224",
+        appId: "1:689968025224:web:3ce2eea1773b873091193d",
+        measurementId: "G-BL33BVDRBX"
+  };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
+    </script>
+
+
+
+
+
+
+
+
+    <!--sign up dialogue-->
+    
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Sign Up Here</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-12 inner">
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input class="form-control" type="email" id="registerUsername" placeholder="Ex: abc@gmail.com">
+                    </div>
+                </div>
+                <div class="col-12 inner">
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input class="form-control" type="password" id="registerPassword">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <br>
+                    <div class="alert alert-primary" id="success-reg">...</div>
+                    <div class="alert alert-danger" id="error-reg">...</div>
+                </div>
+                <div class="col-12 inner">
+                    <br>
+                    <button class="col-12 btn btn-primary" id="registerNowButton" onclick="register()">Register Now</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--sign up dialogue-->
+
+</body>
+</html>

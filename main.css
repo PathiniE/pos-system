@@ -1,0 +1,18 @@
+.button-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-option {
+  color: red;
+}
+
+.option {
+  text-decoration: underline;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.update-option {
+  color: green;
+}/*# sourceMappingURL=main.css.map */
