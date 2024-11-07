@@ -60,6 +60,7 @@ function register() {
 
     if(!email && !password){
       alert('Provide Email & Password')
+      return;
     }
   
 }
